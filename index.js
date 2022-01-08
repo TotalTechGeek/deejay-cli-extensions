@@ -1,7 +1,8 @@
 // @ts-check
-import Kafka from "./kafka.js"
-import HTTP from './http.js'
-import webhook from "./webhook.js"
+import Kafka from "./inputs/kafka.js"
+import HTTP from './inputs/http.js'
+import webhook from "./operators/webhook.js"
+import commit from "./operators/commits.js"
 
 // Creates a new input mechanisms for the Deejay CLI application.
 export const inputs = {
@@ -9,7 +10,8 @@ export const inputs = {
     HTTP
 }
 
-// Creates a new output mechanism for the Deejay CLI application (Webhook).
+// Introduces new operators to the Deejay CLI application
 export const operators = {
-    webhook
+    webhook,
+    commit
 }
